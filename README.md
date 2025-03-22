@@ -79,6 +79,23 @@ Since 2009 there has been publicly available exploits for the crypto-1 security 
 5. crack the keys
 (for the sake of safety I have left out a vital step necessary to crack the keys. You can do your own research to figure out what this may mean)
 
+## Chapter 5: Editing values within the card
+
+Now that we have obtained the keys and cracked the card, you will most likely have a dump of the decyphered card. This is where we will exploit the MBTA's most critical flaw being the amount of money a card has is stored not on a secure data base but on the card directly. Yes you heard me correctly, the truth for how much money the card currently has is directly on the card, and there is not check to any database as to if this value has been manipulated. Yet there is still a major interference that stands in our way, the checksum. The checksum is used to ensure that any data in the line before it has not been tampered with, and is a specially created algorithm making it so every card will have a unique checksum even on a identical line. I am not aware of any source that has cracked this checksum algorithm, and even with many hours of trial and error I failed as well.
+
+**Generating a new checksum**
+
+From my online research I found that when two cards seperate and unique cards are used in tandem there is a way to copy lines from one card to another and generate the correct checksum.
+
+Say for instance I have the lines
+```cpp
+// The first card
+00 20 00 00 00 00 00 00 20 00 00 00 00 00 c3 78
+// The second card
+00 20 00 00 00 00 00 00 20 00 00 00 00 00 77 d1
+```
+The checksums for these cards are C378 and 77D1. If we XOR these checksums together we get B4A9 this is what we can call the checksum modifier, and is going to be vital
+
 
 
 
