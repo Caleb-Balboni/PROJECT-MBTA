@@ -67,6 +67,19 @@ mifareclassic_AuthenticateBlock()
 mifareclassic_ReadDataBlock()
 ```
 
+## Chapter 4: Cracking Mifare keys
+
+Since 2009 there has been publicly available exploits for the crypto-1 security system of the Mifare Classic card. Multiple tools are publicly available for this process with the most notable being MFOC and MFCUK. I will not be detailing exactly how to setup and use these tools as plenty of public documentation exists already, but I will give a brief overview of the basic steps of setting up these tools with your windows machine.
+
+**Setup on Windows**
+1. Install a Linux vm (I used Kali Linux)
+2. Use a UART adapter to connect your PN532 to your windows machine via USB
+3. use wsl to share the UART connection with your linux vm
+4. install MFOC within your linux vm
+5. crack the keys
+(for the sake of safety I have left out a vital step necessary to crack the keys. You can do your own research to figure out what this may mean)
+
+
 
 
 
