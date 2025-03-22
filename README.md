@@ -16,7 +16,13 @@ Below is an example of what a single sector on a charlie card looks like:
 
 <img src="https://github.com/user-attachments/assets/5419744c-09ce-4d37-8514-b35ee56e9730" alt="ex Sector" width="250"/>
 
+
 Chapter 3: Materials and Basics of reading NFC cards
+
+The materials needed for this project are going to be a PN-532 NFC reader, a UART I2C adapter (if your a windows user) and a Arduino UNO. I will also highly reccomend having a windows or a linux machine as there will be necesssary software later that will be needed to interact with the NFC reader.
+
+<img src="(https://github.com/user-attachments/assets/afdffb3e-79dc-472d-ae96-3e804f562c10" alt="PN532" width="300"/>
+
 
 
 
