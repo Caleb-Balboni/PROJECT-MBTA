@@ -33,7 +33,6 @@ For this project, you'll need:
 
 I highly recommend using Windows or Linux, as some of the necessary software tools used later to interact with the NFC reader work best on those systems.
 
----
 
 To get started with the PN-532 module and Arduino, refer to the official setup guide provided here:
 
@@ -52,7 +51,6 @@ Once the library is installed in your Arduino IDE, it includes examples to help 
 - Authenticate specific blocks
 - Read from and write to MIFARE Classic cards
 
----
 
 ### Important Functions
 
