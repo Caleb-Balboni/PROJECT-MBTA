@@ -29,6 +29,7 @@ This website details everything that is needed in setting up the PN532 with the 
 https://www.elechouse.com/elechouse/images/product/PN532_module_V3/PN532_%20Manual_V3.pdf
 
 The library once installed in you're Arduino IDE includes examples of how to interact with the board, including reading the HWID and writing to blocks within the card.
+---
 Important Functions: 
 readPassiveTargetID -- To obtain the UID of the card
 mifareclassic_ReadDataBlock -- to read a selected block of the mifare classic card
