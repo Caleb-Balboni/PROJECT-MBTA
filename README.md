@@ -16,13 +16,12 @@ The MBTA Charlie Card was first introduced in 2006 and is a Mifare Classic card 
 
 **Chapter 2: How does Mifare Classic Work?**
 Mifare classic cards are a form of NFC (near field communication) that holds particular data within itself. In the case of the MBTA these cards are the Mifare Classic 1k cards (1 kilobyte or 1000 bytes of data). Each card is divided into 16 different sectors containing 4 block each (totalling 64 blocks). The fourth block of each sector contains the keys for that particular block allowing for the data within them to read properly. These keys are part of the cryto-1 system, a basic form of crytography which keeps the blocks from being read by a standard NFC reader. Additionally each card contains a unique HWID that cannot be changed, and can be found in the first 5 bytes of the card.
-
 Below is an example of what a single sector on a charlie card looks like:
-
 <img src="https://github.com/user-attachments/assets/5419744c-09ce-4d37-8514-b35ee56e9730" alt="ex Sector" width="300"/>
 
 
 **Chapter 3: Materials and Basics of reading NFC cards**
+
 The materials needed for this project are going to be a PN-532 NFC reader, a UART I2C adapter (if your a windows user) and a Arduino UNO. I will also highly reccomend having a windows or a linux machine as there will be necesssary software later that will be needed to interact with the NFC reader.
 
 This website details everything that is needed in setting up the PN532 with the arduino including a library for interacting with it:
