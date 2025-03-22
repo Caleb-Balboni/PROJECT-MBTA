@@ -21,6 +21,8 @@ Chapter 3: Materials and Basics of reading NFC cards
 
 The materials needed for this project are going to be a PN-532 NFC reader, a UART I2C adapter (if your a windows user) and a Arduino UNO. I will also highly reccomend having a windows or a linux machine as there will be necesssary software later that will be needed to interact with the NFC reader.
 
+
+Here is picture of the PN532 and the wiring diagram with the arduino UNO:
 <img src="https://github.com/user-attachments/assets/c7bcaeff-ae75-4549-8a5d-6f9b874cfefb" alt="PN532" width="250"/>
 
 
