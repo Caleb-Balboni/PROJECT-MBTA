@@ -24,6 +24,8 @@ The materials needed for this project are going to be a PN-532 NFC reader, a UAR
 Here is picture of the PN532 and the wiring diagram with the arduino UNO:
 
 <img src="https://github.com/user-attachments/assets/c7bcaeff-ae75-4549-8a5d-6f9b874cfefb" alt="PN532" width="250"/>
+This website details everything that is needed in setting up the PN532 with the arduino including a library for interacting with it:
+https://www.elechouse.com/elechouse/images/product/PN532_module_V3/PN532_%20Manual_V3.pdf
 
 
 
