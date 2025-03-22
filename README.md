@@ -6,7 +6,7 @@ Nearly a million Bostonians ride the MBTA every week, and for those of lower eco
 
 Chapter 1: The MBTA Charlie Card
 
-<img src="https://github.com/user-attachments/assets/b1e51d0b-8cd5-4c20-b9b0-0d7f43c04925" alt="charliecard" width="100" style="float: left; margin-right: 10px;"/>
+<img src="https://github.com/user-attachments/assets/b1e51d0b-8cd5-4c20-b9b0-0d7f43c04925" alt="charliecard" width="200" style="float: left; margin-right: 10px;"/>
 <p>This text wraps around the image and stays to the right of it. Make sure there's enough vertical space if the text is long.</p>
 
 
