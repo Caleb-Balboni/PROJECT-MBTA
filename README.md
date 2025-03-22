@@ -21,20 +21,53 @@ Below is an example of what a single sector on a charlie card looks like:
 <img src="https://github.com/user-attachments/assets/5419744c-09ce-4d37-8514-b35ee56e9730" alt="ex Sector" width="300"/>
 
 
-## Chapter 3: Materials and Basics of reading NFC cards
+## Chapter 3: Materials and Basics of Reading NFC Cards
 
-The materials needed for this project are going to be a PN-532 NFC reader, a UART I2C adapter (if your a windows user) and a Arduino UNO. I will also highly reccomend having a windows or a linux machine as there will be necesssary software later that will be needed to interact with the NFC reader.
 
-This website details everything that is needed in setting up the PN532 with the arduino including a library for interacting with it:
-https://www.elechouse.com/elechouse/images/product/PN532_module_V3/PN532_%20Manual_V3.pdf
+For this project, you'll need:
 
-The library once installed in you're Arduino IDE includes examples of how to interact with the board, including reading the HWID and writing to blocks within the card.
+- **PN-532 NFC Reader**
+- **UART/I2C Adapter** (recommended for Windows users)
+- **Arduino UNO**
+- A computer running **Windows** or **Linux** (Mac may work, but instructions are optimized for Windows/Linux)
 
-Important Functions: 
+I highly recommend using Windows or Linux, as some of the necessary software tools used later to interact with the NFC reader work best on those systems.
 
-readPassiveTargetID -- To obtain the UID of the card
-mifareclassic_ReadDataBlock -- to read a selected block of the mifare classic card
-mifareclassic_AuthenticateBlock -- to authenticate a certain block with a given to gain access to read and write privledged to that block
+---
+
+To get started with the PN-532 module and Arduino, refer to the official setup guide provided here:
+
+🔗 [PN532 Module Manual & Setup Instructions](https://www.elechouse.com/elechouse/images/product/PN532_module_V3/PN532_%20Manual_V3.pdf)
+
+This includes:
+
+- Wiring diagrams
+- Library installation
+- Example sketches for reading cards
+- How to write to specific memory blocks
+
+Once the library is installed in your Arduino IDE, it includes examples to help you:
+
+- Read the **UID** (Unique Identifier) of a card
+- Authenticate specific blocks
+- Read from and write to MIFARE Classic cards
+
+---
+
+### Important Functions
+
+Here are some key functions you’ll use from the library:
+
+```cpp
+// Reads the UID (Unique Identifier) of the card
+readPassiveTargetID()
+
+// Authenticates a specific block using a key
+mifareclassic_AuthenticateBlock()
+
+// Reads data from a specified block (after authentication)
+mifareclassic_ReadDataBlock()
+```
 
 
 
