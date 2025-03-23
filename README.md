@@ -94,9 +94,37 @@ Say for instance I have the lines
 // The second card
 00 20 00 00 00 00 00 00 20 00 00 00 00 00 77 d1
 ```
-The checksums for these cards are C378 and 77D1. If we XOR these checksums together we get B4A9 this is what we can call the checksum modifier, and is going to be vital
+The checksums for these cards are C378 and 77D1. If we XOR these checksums together we get B4A9 this is what we can call the checksum modifier, and is going to be vital for copying money values from one card to the next. All one must do to copy a line from one card to another is write the line from the first card into the second card, and XOR the checksum of this new line by the checksum modifer. This will create a new valid line on the new card, as if it had been there all along. So for example say one knows the line where the money value is stored on one of these MBTA cards. I could simply add 50 dollars to one card, copy that line to the new card, XOR that value by the checksum modifer, and boom we have a second card with 50 dollars as well.
 
+**In Summary**
+1. Find two identical line on two serpate cards
+2. XOR their checksums together to get the checksum modifer
+3. copy the original line to the new card
+4. XOR the this new line by the checksum modifer
+5. The line has now been succesfully copied
 
+## Chapter 5: Explanation of the provided code
+
+The code I wrote is extrodiarily simply and automates the steps above. First we read the data from a known block that will be identical to a block on the original card (with money on it). We can than XOR the checksum of the read block (dataToRead[14] and dataToRead[15] are the 15 and 16th bytes of this block), with the same checksum from the original card (stored in originalChecksum[2] for convience) this gives us the data modifer. Than we can XOR this data modifer with the checksum of line that is going to be copied (saved as dataToWrite[16]) which will produce a new line that is read to by copied to the new card.
+
+**What this Code looks like**
+```cpp
+if (nfc.mifareclassic_ReadDataBlock(REDACTED, dataToRead)) { // authenticate a known block that will have an identical value the known card
+    uint8_t checkSumMod1 = originalChecksum[0] ^ dataToRead[14]; // XOR the checksums of the known checksum of the block to be written with the read checksum data
+    uint8_t checkSumMod2 = originalChecksum[1] ^ dataToRead[15]; // XOR the checksums of the known checksum of the block to be written with the read checksum data
+    dataToWrite[14] = REDACTED ^ checkSumMod1; // XOR the checksum modifer with the the cheksum of the data to be written
+    dataToWrite[15] = REDACTED ^ checkSumMod2; // XOR the checksum modifer with the the cheksum of the data to be written
+
+// Now we have a new line that can be written to the new card with the proper checksum
+```
+
+Next we can than write this new line to where to a new line on card which looks something like this
+
+```cpp
+if (nfc.mifareclassic_AuthenticateBlock(uid, uidLength, REDACTED, 1, keya)) { // Authenticate block to be written to
+     if(nfc.mifareclassic_WriteDataBlock(9, dataToWrite)) {} // Write to that particular block
+```
+If you notice I actually write two seperate times to two seperate blocks, I am going to leave this reasoning ambiguous, and is something you should figure out on your own.
 
 
 
