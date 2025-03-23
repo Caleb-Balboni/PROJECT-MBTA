@@ -126,5 +126,12 @@ if (nfc.mifareclassic_AuthenticateBlock(uid, uidLength, REDACTED, 1, keya)) { //
 ```
 If you notice I actually write two seperate times to two seperate blocks, I am going to leave this reasoning ambiguous, and is something you should figure out on your own.
 
+## Conclusion
 
+Thats really all their is to it. In total I spent about 60 dollars on materials, and with about a month of research I can basically change anything I want about MBTA T cards, including the amount of money on the card. This is a critical design flaw, and something that must be addressed by the MBTA. It should not be this essay to exploit I critical system within the MBTA.
 
+**Potential steps to address this issue**
+1. Firstly the MBTA must move away from having the "truth" of the card, stored on the card itself. This type of information is sensitive and should only be stored on a centralized data base.
+2. If the first step is to complex, there should be more complex analysis of the card whenever it is tapped. Simple tests such as checking the transaction history against the current value stored on the card would significantly increase the difficulty of exploiting these cards. Additionally, making the checksum more unique to the individual card would be a step in the right direction that would further complicate the process of hacking the card.
+
+ **THE END**  
