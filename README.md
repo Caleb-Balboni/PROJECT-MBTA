@@ -114,7 +114,7 @@ if (nfc.mifareclassic_ReadDataBlock(REDACTED, dataToRead)) { // authenticate a k
     uint8_t checkSumMod2 = originalChecksum[1] ^ dataToRead[15]; // XOR the checksums of the known checksum of the block to be written with the read checksum data
     dataToWrite[14] = REDACTED ^ checkSumMod1; // XOR the checksum modifer with the the cheksum of the data to be written
     dataToWrite[15] = REDACTED ^ checkSumMod2; // XOR the checksum modifer with the the cheksum of the data to be written
-
+}
 // Now we have a new line that can be written to the new card with the proper checksum
 ```
 
@@ -123,6 +123,7 @@ Next, we can then write this new line on the card, which looks something like th
 ```cpp
 if (nfc.mifareclassic_AuthenticateBlock(uid, uidLength, REDACTED, 1, keya)) { // Authenticate block to be written to
      if(nfc.mifareclassic_WriteDataBlock(9, dataToWrite)) {} // Write to that particular block
+}
 ```
 If you notice I write two separate times to two separate blocks, I am going to leave this reasoning ambiguous, and it is something you should figure out on your own.
 
