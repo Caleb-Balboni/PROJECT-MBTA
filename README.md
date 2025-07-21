@@ -2,7 +2,7 @@
 
 # PREREQUISITES:
 The meat and potatoes of this project require a decent understanding of the Arduino platform, how to read hexadecimal, and a basic understanding of C++.
-I will not be fully explaining every detail of how this works, as I am assuming decent proficiency in these areas. Additionally, you may notice different parts of the code provided are redacted. This is because I do not condone using this guide as a means of stealing from the MBTA, rather as an educational repository to show the dire changes the City of Boston has been neglecting to implement into their T card system (and more broadly into the MBTA as a whole). I DO NOT CONDONE STEALING!    
+I will not be fully explaining every detail of how this works, as I am assuming decent proficiency in these areas. Additionally, you may notice parts of the code provided are redacted. This is because I do not condone using this guide as a means of stealing from the MBTA, rather as an educational repository to show the dire changes the City of Boston has been neglecting to implement into their T card system (and more broadly into the MBTA as a whole). I DO NOT CONDONE STEALING!    
 
 # INTRODUCTION:
 The MBTA is the public transportation system in the city of Boston. Since 2006, the MBTA has used the MIFARE-CLASSIC T-Cards as the primary method of payment for using the T in the city of Boston. All trains, buses ect. use this payment system and continue to use it today. The city of Boston has neglected to update this system and properly fund the MBTA leading to a stagnation in the technology and infrastructure of the MBTA. 
